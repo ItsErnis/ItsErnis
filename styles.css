@@ -1,0 +1,591 @@
+/* CSS Kintamieji (Išsaugoti bendrai priežiūrai) */
+:root {
+    /* Spalvos */
+    --color-primary-dark: #202020;
+    --color-text-dark: #000000;
+    --color-text-light: #ffffff;
+    --color-accent: #D8842C;
+    --color-light-gray: #b6b6b6;
+    --color-border: #eeeeee;
+
+    /* Šriftai */
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Libre Caslon Display', serif;
+
+    /* Tarpai */
+    --padding-desktop: 40px;
+    --padding-tablet: 30px;
+    --padding-mobile: 20px;
+    --max-width: 1360px;
+}
+
+/* Baziniai Stiliai ir Resetas */
+body {
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Utility Klasės */
+.container {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--padding-desktop);
+}
+
+/* Mygtukai/Nuorodos Stilius */
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 18px;
+    height: 42px;
+    border-radius: 10px;
+    padding: 0 25px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn--primary-outline {
+    width: 153px; /* Fiksuotas plotis pagal pradinį dizainą */
+    border: 2px solid var(--color-text-light);
+    color: var(--color-text-light);
+}
+
+.btn--primary-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Navigacija ir Antraštė */
+.main-header {
+    padding: 15px 0;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 42px;
+    padding: 0 var(--padding-desktop);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 30px;
+    color: var(--color-text-light);
+    margin: 0;
+    text-decoration: none;
+}
+
+.nav-links-container {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--color-text-light);
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Hamburger Meniu Ikona (Mobile) */
+.hamburger-menu-icon {
+    display: none;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    z-index: 20;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.hamburger-menu-icon span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-text-light);
+    border-radius: 2px;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu-icon span:nth-child(1) {
+    top: 3px;
+}
+
+.hamburger-menu-icon span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger-menu-icon span:nth-child(3) {
+    bottom: 3px;
+}
+
+/* HERO SEKCIJA (ATSTATYTA Į PRADINIUS STILIUS) */
+main {
+    height: 100vh;
+    
+    background-image:
+        linear-gradient(rgba(32, 32, 32, 0.5), rgba(32, 32, 32, 0.5)),
+        url('Background.png');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 40px;
+    position: relative;
+}
+
+.hero-content {
+    width: 748px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 60px;
+    color: #ffffff;
+}
+
+.hero-line {
+    width: 90px;
+    height: 15px;
+    background: #ffffff;
+    margin-bottom: 30px;
+}
+
+.hero-content h1 {
+    font-family: 'Libre Caslon Display', serif;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 1.2;
+    color: #ffffff;
+    margin: 0 0 32px 0;
+    width: 900px;
+}
+
+.hero-content p {
+    width: 528px;
+    height: 60px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.69;
+    color: #ffffff;
+    margin: 0 0 32px 0;
+}
+
+.learn-more-btn {
+    width: 153px;
+    height: 42px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #ffffff;
+    text-decoration: none;
+}
+/* HERO SEKCIJOS PABAIGA */
+
+
+/* Naujausios Naujienos Sekcija */
+.newest-reads-section {
+    background-color: var(--color-text-light);
+    padding: 80px 0;
+}
+
+.newest-reads-section h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: var(--color-text-dark);
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 50px;
+    padding: 0 var(--padding-desktop);
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.articles-container {
+    display: flex;
+    gap: 20px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--padding-desktop);
+}
+
+.article-card {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--color-text-light);
+    transition: box-shadow 0.3s;
+}
+
+.article-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.article-image-wrapper {
+    width: 100%;
+    height: 352px;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+}
+
+.article-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover img {
+    transform: scale(1.03);
+}
+
+.article-content {
+    width: 100%;
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+}
+
+.article-date {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--color-light-gray);
+    margin: 0 0 15px 0;
+}
+
+.article-title {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1.4;
+    color: var(--color-text-dark);
+    text-align: left;
+    margin: 0 0 20px 0;
+    flex-grow: 1; 
+}
+
+.read-more-link {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--color-accent);
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+}
+
+.arrow-svg-icon {
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.read-more-link:hover .arrow-svg-icon {
+    transform: translateX(3px);
+}
+
+/* MEDIA UŽKLAUSOS */
+
+/* Tabletams (iki 1024px pločio) */
+@media (max-width: 1024px) {
+
+    .main-nav {
+        padding: 0 var(--padding-tablet);
+    }
+
+    .nav-links-container {
+        display: none;
+    }
+
+    .hamburger-menu-icon {
+        display: block;
+    }
+
+    /* Hero sekcija - Mobile/Tablet optimizavimas */
+    main {
+        padding: 0 var(--padding-tablet);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 700px;
+        padding: 0;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .hero-content h1 {
+        font-size: 60px;
+        line-height: 1.2;
+        width: auto;
+        max-width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        width: auto;
+        max-width: 90%;
+        margin-bottom: 25px;
+        height: auto;
+    }
+
+    .hero-line {
+        width: 70px;
+        height: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .learn-more-btn {
+        /* Atnaujinta klasė, kad atitiktų .btn */
+        width: 153px;
+        height: 42px;
+        border: 2px solid #ffffff;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: #ffffff;
+        text-decoration: none;
+        /* Papildoma, kad užtikrinti išlyginimą su flex-start */
+        align-self: flex-start;
+    }
+    /* Hero sekcijos optimizavimo pabaiga */
+
+    .newest-reads-section {
+        padding: 60px 0;
+    }
+
+    .newest-reads-section h2 {
+        font-size: 32px;
+        padding: 0 var(--padding-tablet);
+        margin-bottom: 40px;
+    }
+
+    .articles-container {
+        flex-direction: column;
+        max-width: 800px;
+        padding: 0 var(--padding-tablet);
+        gap: 30px;
+    }
+
+    .article-card {
+        flex-basis: auto;
+        flex-direction: row;
+    }
+
+    .article-image-wrapper {
+        width: 40%;
+        height: 250px;
+        border-radius: 4px 0 0 4px;
+    }
+
+    .article-content {
+        width: 60%;
+        min-height: 250px;
+        padding: 20px 25px;
+    }
+
+    .article-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Tabletams Portrait ir Mažesniems Laptopams (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Atstatymas į 2 stulpelius */
+    .articles-container {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: var(--max-width);
+    }
+    
+    .article-card {
+        flex-basis: calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        flex-direction: column;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .article-image-wrapper {
+        width: 100%;
+        height: 280px;
+        border-radius: 4px 4px 0 0;
+    }
+
+    .article-content {
+        width: 100%;
+        min-height: 220px;
+        padding: 25px 30px;
+    }
+    
+    /* Hero turinio išlaikymas kairėje, kaip prašyta */
+    main {
+        justify-content: flex-start;
+    }
+
+    .hero-content {
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .hero-line {
+        align-self: flex-start;
+    }
+}
+
+
+/* Mobiliesiems Telefonams (iki 480px pločio) */
+@media (max-width: 480px) {
+
+    .main-header {
+        top: 10px;
+    }
+
+    .main-nav {
+        padding: 0 var(--padding-mobile);
+    }
+    
+    .logo {
+        font-size: 28px;
+    }
+
+    /* Hero sekcija - Mobile optimizavimas */
+    main {
+        padding: 0 var(--padding-mobile);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-content {
+        max-width: 350px;
+        padding: 0;
+    }
+
+    .hero-line {
+        height: 8px;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .learn-more-btn {
+        width: 140px;
+        height: 40px;
+        font-size: 16px;
+    }
+    /* Hero sekcijos optimizavimo pabaiga */
+
+
+    .newest-reads-section {
+        padding: 50px 0;
+    }
+
+    .newest-reads-section h2 {
+        font-size: 24px;
+        padding: 0 var(--padding-mobile);
+    }
+
+    .articles-container {
+        flex-direction: column;
+        max-width: 350px;
+        padding: 0 var(--padding-mobile);
+        gap: 20px;
+    }
+
+    .article-card {
+        flex-direction: column; 
+    }
+
+    .article-image-wrapper {
+        width: 100%;
+        height: 200px; 
+        border-radius: 4px 4px 0 0;
+    }
+
+    .article-content {
+        width: 100%;
+        min-height: auto; 
+        padding: 20px;
+    }
+
+    .article-date {
+        font-size: 13px;
+    }
+
+    .article-title {
+        font-size: 20px;
+    }
+}
